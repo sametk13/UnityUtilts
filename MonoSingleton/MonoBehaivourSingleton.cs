@@ -21,7 +21,10 @@ public class MonoBehaivourSingleton<T> : MonoBehaviour
                 {
                     instance = objects[0];
                 }
-                Debug.LogError($"{typeof(T).Name} is null");
+                else
+                {
+                    Debug.LogError($"{typeof(T).Name} is null");
+                }              
             }
 
             return instance;
