@@ -7,5 +7,4 @@
             ObjectPoolManager.Instance.AddObject("First Pool", itemsToPool);
             ObjectPoolManager.Instance.GetObject("First Pool");
             ObjectPoolManager.Instance.GetAllPooledObjects("First Pool");
-
 ```
