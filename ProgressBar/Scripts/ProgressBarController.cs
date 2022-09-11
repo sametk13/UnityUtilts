@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class ProgressBarController : MonoBehaviour, IProgressBar
+public class ProgressBarController : MonoBehaviour
 {
     public UnityEvent ProgressBarUpdated;
 
