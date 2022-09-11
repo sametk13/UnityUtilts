@@ -16,8 +16,8 @@ public class ProgressBarController : MonoBehaviour
     [Header("Optionally")]
     [SerializeField] TextMeshProUGUI progressPercentText;
     [SerializeField] string percentPrefix, percentSuffix;
-    [SerializeField] TextMeshProUGUI currentAmountText;
-    [SerializeField] string currentAmountPrefix, currentAmountSuffix;
+    [SerializeField] TextMeshProUGUI currentValueText;
+    [SerializeField] string currentValuePrefix, currentValueSuffix;
 
     Tween currentTween;
 
@@ -42,9 +42,9 @@ public class ProgressBarController : MonoBehaviour
         {
             progressPercentText.SetText($"{percentPrefix}{_fillAmount}{percentSuffix}");
         }
-        if (currentAmountText != null)
+        if (currentValueText != null)
         {
-            currentAmountText.SetText($"{currentAmountPrefix}{_currentValue}{currentAmountSuffix}");
+            currentValueText.SetText($"{currentValuePrefix}{_currentValue}{currentValueSuffix}");
         }
     }
 

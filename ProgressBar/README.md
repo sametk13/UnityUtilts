@@ -1,10 +1,13 @@
 # How to use
-1) Create a new empty GameObject.
-2) Attach the ObjectPoolManager to the new created GameObject.
+1) Add ProgressBarCanvas to hierarchy.
+2) Optionally create progress percent text and attach to progress bar controller 
+3) Optionally create current value text and attach to progress bar controller 
+4) Use UpdateProgressBar for to update progress bar
+5) Use ResetProgressBar for to reset progress bar
+6) Use HideProgressBar for to hide progress bar
 
-
-```
-            ObjectPoolManager.Instance.AddObject("First Pool", itemsToPool);
-            ObjectPoolManager.Instance.GetObject("First Pool");
-            ObjectPoolManager.Instance.GetAllPooledObjects("First Pool");
+```		
+			UpdateProgressBar(_currentValue,_maxValue);
+            ResetProgressBar();
+            HideProgressBar();
 ```
