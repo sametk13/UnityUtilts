@@ -1,6 +1,7 @@
 # How to use
-1) Create a new empty GameObject.
-2) Attach the ObjectPoolManager to the new created GameObject.
+1) Add MonoSingleton from this repo.
+2) Create a new empty GameObject.
+3) Attach the ObjectPoolManager to the new created GameObject.
 
 
 ```
