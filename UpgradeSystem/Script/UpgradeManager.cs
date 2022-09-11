@@ -6,7 +6,7 @@ using SKUtils.UpgradeSystem;
 namespace SKUtils.UpgradeSystem
 {
     [RequireComponent(typeof(GoldController))]
-    public class UpgradeManager : MonoBehaivourSingleton<UpgradeManager>
+    public class UpgradeManager : MonoBehaviourSingleton<UpgradeManager>
     {
         public List<UpgradableField> UpgradableList = new List<UpgradableField>();
         [HideInInspector]public GoldController goldController;
