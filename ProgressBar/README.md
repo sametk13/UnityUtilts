@@ -7,8 +7,7 @@
 6) Use HideProgressBar for to hide progress bar
 
 ```		
-
-			UpdateProgressBar(_currentValue,_maxValue);
+            UpdateProgressBar(_currentValue,_maxValue);
             ResetProgressBar();
             HideProgressBar();
 ```
