@@ -8,12 +8,11 @@ namespace SKUtils.Feedbacks
     // Need DoTween asset
     public class PunchScaleFeedBack : MonoBehaviour
     {
-        [SerializeField] Vector3 punch = new Vector3(0.07f, 0.07f, 0.07f);
+        Tweener tweener;
         [SerializeField] float duration = 0.3f;
         [SerializeField] int vibrato = 10;
         [SerializeField] float elasticity = 10;
-
-        private Tweener tweener;
+        [SerializeField] Vector3 punch = new Vector3(0.07f, 0.07f, 0.07f);
 
         public void PunchScale()
         {
