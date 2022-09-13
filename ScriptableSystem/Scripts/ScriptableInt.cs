@@ -4,16 +4,15 @@ using UnityEngine;
 
 namespace SKUtils.ScriptableSystem
 {
-    [CreateAssetMenu(menuName = "SkUtils/ScriptableData/ScriptableFloat")]
-    public class ScriptableFloat : ScriptableData
+    [CreateAssetMenu(menuName = "SkUtils/ScriptableData/ScriptableInt")]
+    public class ScriptableInt : ScriptableData
     {
-        public Action<float> OnValueIncreased;
-        public Action<float> OnValueDecreased;
+        public Action<int> OnValueIncreased;
+        public Action<int> OnValueDecreased;
 
-        [SerializeField] float minValue;
-        [SerializeField] float maxValue;
-        [SerializeField] float value;
-
+        [SerializeField] int minValue;
+        [SerializeField] int maxValue;
+        [SerializeField] int value;
 
         private void OnValidate()
         {
@@ -27,7 +26,7 @@ namespace SKUtils.ScriptableSystem
             }
             set
             {
-                this.value = (float)value;
+                this.value = (int)value;
             }
         }
 
@@ -39,36 +38,36 @@ namespace SKUtils.ScriptableSystem
             }
         }
 
-        public float GetValue()
+        public int GetValue()
         {
-            return (float)Value;
+            return (int)value;
         }
 
         public override void IncreaseValue(object _value)
         {
-            if (maxValue <= this.value + (float)_value)
+            if (maxValue <= this.value + (int)_value)
             {
                 OnValueIncreased?.Invoke(Mathf.Abs(maxValue - this.value));
                 this.value = maxValue;
                 UpdateValue(this.value);
                 return;
             }
-            OnValueIncreased?.Invoke((float)_value);
-            this.value += (float)_value;
+            OnValueIncreased?.Invoke((int)_value);
+            this.value += (int)_value;
             UpdateValue(this.value);
         }
 
         public override void DecreaseValue(object _value)
         {
-            if (minValue >= this.value - (float)_value)
+            if (minValue >= this.value - (int)_value)
             {
                 this.value = minValue;
                 OnValueDecreased?.Invoke(Mathf.Abs(this.value - minValue));
                 UpdateValue(this.value);
                 return;
             }
-            OnValueDecreased?.Invoke((float)_value);
-            this.value -= (float)_value;
+            OnValueDecreased?.Invoke((int)_value);
+            this.value -= (int)_value;
             UpdateValue(this.value);
         }
 
@@ -76,7 +75,7 @@ namespace SKUtils.ScriptableSystem
         {
             if (saveData && HasKey())
             {
-                var data = JsonSave<float>.LoadData(saveKey);
+                var data = JsonSave<int>.LoadData(saveKey);
                 UpdateValue(data);
             }
             else

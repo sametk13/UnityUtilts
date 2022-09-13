@@ -28,12 +28,12 @@ namespace SKUtils.UpgradeSystem
 
         private void OnEnable()
         {
-            UpgradeManager.Instance.goldController.OnUpdateGold += SetInteractable;
+            UpgradeManager.Instance.goldController.Gold.OnValueUpdated += SetInteractable;
             SetInteractable();
         }
         private void OnDisable()
         {
-            UpgradeManager.Instance.goldController.OnUpdateGold -= SetInteractable;
+            UpgradeManager.Instance.goldController.Gold.OnValueUpdated -= SetInteractable;
         }
 
         public void Setup(UpgradableField upgradableField)
@@ -44,7 +44,7 @@ namespace SKUtils.UpgradeSystem
 
             titleText.SetText(upgradableField.UpgradeData.ButtonTitleText);
 
-            levelText.SetText($"LV. {upgradableField.CurrentLevel}");
+            levelText.SetText($"LV. {upgradableField.CurrentLevel.GetValue()}");
 
             costText.text = cost + "$";
 

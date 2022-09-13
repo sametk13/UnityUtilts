@@ -1,3 +1,4 @@
+using SKUtils.ScriptableSystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,33 +9,21 @@ namespace SKUtils.UpgradeSystem
 {
     public class GoldController : MonoBehaviour
     {
-        [SerializeField]private float Gold;
-
-        public Action<float> OnIncreaseGold;
-        public Action<float> OnDecreaseGold;
-        public Action OnUpdateGold;
+        public  ScriptableFloat Gold;
 
         public void IncreaseMoney(float amount)
         {
-            Gold += amount;
-
-            OnUpdateGold?.Invoke();
-
-            OnIncreaseGold?.Invoke(Gold);
+            Gold.IncreaseValue(amount);
         }
 
         public void DecreaseMoney(float amount)
         {
-            Gold -= amount;
-
-            OnUpdateGold?.Invoke();
-
-            OnDecreaseGold?.Invoke(Gold);
+            Gold.DecreaseValue(amount);
         }
 
         public bool IsEnoughtGold(float _value)
         {
-            if (Gold - _value >= 0)
+            if (Gold.GetValue() - _value >= 0)
             {
                 return true;
             }

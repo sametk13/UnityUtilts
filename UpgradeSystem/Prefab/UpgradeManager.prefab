@@ -47,8 +47,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradableList:
   - UpgradeData: {fileID: 11400000, guid: 179d150972f6e9549a4c69efe05bf097, type: 2}
-    CurrentLevel: 0
-    Value: 0
+    CurrentLevel: {fileID: 0}
+    Value: {fileID: 0}
+    BaseValue: 30
+    PerLevelIncreaseValue: 10
+    BaseCost: 30
+    OnUpgrade:
+      m_PersistentCalls:
+        m_Calls: []
+  - UpgradeData: {fileID: 11400000, guid: 179d150972f6e9549a4c69efe05bf097, type: 2}
+    CurrentLevel: {fileID: 11400000, guid: 4fd9935169186904dba4af954a98be19, type: 2}
+    Value: {fileID: 11400000, guid: f89e2eb578446cf4c91e924b5cd381b4, type: 2}
     BaseValue: 30
     PerLevelIncreaseValue: 10
     BaseCost: 30
@@ -68,4 +77,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 863f08ca17efb2f4b91108b0edc053ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Gold: 33
+  Gold: {fileID: 11400000, guid: 63407cb0ecdc12e47b25368703220323, type: 2}

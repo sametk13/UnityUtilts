@@ -2,6 +2,7 @@ using System;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using SKUtils.ScriptableSystem;
 
 namespace SKUtils.UpgradeSystem
 {
@@ -10,8 +11,8 @@ namespace SKUtils.UpgradeSystem
     {
         public UpgradeData UpgradeData;
 
-        public int CurrentLevel;
-        public float Value;
+        public ScriptableInt CurrentLevel;
+        public ScriptableFloat Value;
 
         [Header("Value Base Settings")]
         public float BaseValue;
@@ -23,17 +24,16 @@ namespace SKUtils.UpgradeSystem
 
         public void Upgrade()
         {
-            CurrentLevel += 1;
+            CurrentLevel.IncreaseValue(1);
 
             OnUpgrade?.Invoke();
 
-            Value = CalculateUpgradableValueAtLevel(CurrentLevel);
-
+            Value.UpdateValue(CalculateUpgradableValueAtLevel(CurrentLevel.GetValue()));
         }
 
         public int CalculateCost()
         {
-            var currentLevel = CurrentLevel;
+            var currentLevel = CurrentLevel.GetValue();
             return (int)(BaseCost + (Mathf.Pow(currentLevel, 1.5f) * BaseCost / 10f));
         }
 
@@ -42,7 +42,5 @@ namespace SKUtils.UpgradeSystem
             return BaseValue + PerLevelIncreaseValue * level;
         }
     }
-
-
 }
 
