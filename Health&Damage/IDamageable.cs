@@ -1,7 +1,9 @@
-
-public interface IDamageable
+namespace SKUtils.Damageable
 {
-    int Health { get; set; }
+	public interface IDamageable
+	{
+		int Health { get; set; }
 
-    void TakeDamage(int _damage);
+		void TakeDamage(int _damage);
+	}
 }
