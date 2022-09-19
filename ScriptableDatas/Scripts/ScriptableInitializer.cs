@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace SKUtils.ScriptableSystem
 {
-    public class ScriptableDataInitializer : MonoBehaviour
+    public class ScriptableInitializer : MonoBehaviour
     {
         private void Start()
         {

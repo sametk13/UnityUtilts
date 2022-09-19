@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MonoBehaviourSingleton<T> : MonoBehaviour
+public class BehaviourSingleton<T> : MonoBehaviour
      where T : Component
 {
     private static T instance;
@@ -26,7 +26,6 @@ public class MonoBehaviourSingleton<T> : MonoBehaviour
                     Debug.LogError($"{typeof(T).Name} is null");
                 }              
             }
-
             return instance;
         }
     }

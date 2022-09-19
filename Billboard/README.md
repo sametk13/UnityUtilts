@@ -1,1 +1,0 @@
-Add billboard to object for it look at the camera
