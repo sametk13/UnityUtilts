@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SKUtils.ObjectPool
 {
-    public class ObjectPoolManager : BehaviourSingleton<ObjectPoolManager>
+    public class ObjectPoolManager : MonoSingleton<ObjectPoolManager>
     {
         public Dictionary<string, ObjectPooler> objectPoolerPairs;
 
