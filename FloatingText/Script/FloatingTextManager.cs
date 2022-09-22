@@ -6,7 +6,7 @@ using SKUtils.ObjectPool;
 
 namespace SKUtils.FloatingText
 {
-    public class FloatingTextManager : MonoBehaviourSingleton<FloatingTextManager>
+    public class FloatingTextManager : MonoSingleton<FloatingTextManager>
     {
         [SerializeField] GameObject floatingTextPrefab;
 
