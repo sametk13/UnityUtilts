@@ -1,11 +1,11 @@
 using UnityEngine;
 
-namespace SKUtils.Interaction
+namespace Ivory.Interaction
 {
-	public interface Iinteractable
-	{
-		string InteractionPrompt { get; }
-		KeyCode InteractionKeyCode { get; }
-		void Interact(GameObject go);
-	}
+    public interface IInteractable
+    {
+        float InteractDistance { get; }
+        KeyCode InteractionKeyCode { get; }
+        void Interact(GameObject go);
+    }
 }
